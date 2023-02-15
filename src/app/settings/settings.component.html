@@ -1,0 +1,74 @@
+<ng-container *ngIf=" isSettingsRoute()">
+<div class="settingsContainer">
+<div class="done flex flex-row flex-wrap justify-center content-center">
+
+    <h1 class="font-bold text-2xl">Settings</h1>
+
+    <div class="donebtn">
+        <a class="font-bold text-xl" (click)="backToProfile()">Done</a>
+    </div>
+
+</div>
+
+<div class="accountSettings mt-10">
+<h2 class="pl-4">ACCOUNT SETTINGS</h2>
+
+ <div class="phoneNumber flex flex-row flex-wrap justify-between p-4">
+    <h1 class="font-bold">Phone Number</h1>
+    <button>Verify Now</button>
+ </div>
+
+ <div class="email flex flex-row flex-wrap justify-between p-4">
+    <h1 class="font-bold">Email</h1>
+    <button>Verify Now</button>
+ </div>
+
+
+ <p class="verify pl-4 pt-2 text-sm">Verify a Phone Number and an Email to help secure your account.</p>
+
+
+ <h2 class="pl-4 pt-5">DISCOVERY</h2>
+
+ <div class="location flex flex-row flex-wrap justify-between p-4">
+    <h1 class="font-bold">Location</h1>
+    <button>My Current Location</button>
+ </div>
+
+ <div class="distance flex flex-col flex-wrap justify-between p-4">
+    <div class="distanceCont flex flex-row justify-between">
+        <h1 class="font-bold">Maximum Distance</h1>
+        <h1>{{distanceValue}} km</h1>
+    </div>
+    <input type="range" id="volume" name="volume" min="1" max="160" [(ngModel)]="distanceValue">
+</div>
+
+
+ <div class="distance flex flex-row flex-wrap justify-between p-4">
+    <h1 class="font-bold">Show Me</h1>
+    <button>Men</button>
+ </div>
+
+ <div class="distance flex flex-col flex-wrap justify-between p-4">
+    <div class="distanceCont flex flex-row justify-between">
+        <h1 class="font-bold">Age Range</h1>
+        <h1>1-{{ageRange}}</h1>
+    </div>
+    <input type="range" id="volume" name="volume" min="1" max="30" [(ngModel)]="ageRange">
+</div>
+
+
+ <div class="distance flex flex-row flex-wrap justify-between  p-4 mt-10">
+    <h1 class="font-bold self-center">Show me on TinDog</h1>
+    <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider round"></span>
+      </label>
+ </div>
+ <p class="showMeOnOf pl-4 pt-2 text-sm">While turned off, you will not be shown in the card stack. You can still see and chat with your matches.</p>
+
+
+
+</div>
+
+</div>
+</ng-container>

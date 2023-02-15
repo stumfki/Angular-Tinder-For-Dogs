@@ -1,0 +1,7 @@
+<nav class="nav flex flex-row justify-between p-3">
+  <img src="assets/icon-profile.png" alt="icon-profile" (click)="goToProfile()"/>
+  <img src="assets/logo.png" alt="icon-profile" (click)="goToHome()"/>
+  <ng-container *ngIf="window.innerWidth < 1200">
+    <img src="assets/icon-chat.png" (click)="goToMessages()" alt="icon-profile"/>
+  </ng-container>
+</nav>

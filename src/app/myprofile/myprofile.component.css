@@ -1,0 +1,131 @@
+
+
+.myProfile img, #imgPanelimg {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+/*Buttons */
+#settings {
+    background-image: url("/assets/settings.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: 0px 10px 20px #E9E9EA;
+}
+
+#photoAdd {
+    background-image: url("/assets/photoadd.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: 0px 10px 20px #E9E9EA;
+}
+
+#editData {
+    background-image: url("/assets/pencil.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: 0px 10px 20px #E9E9EA;
+}
+/*end of Buttons */
+.darker {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+/*Panels for name and image */
+  .namePanel, .imgPanel  {
+    box-shadow: 0px 10px 20px #E9E9EA;
+    z-index: 1;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 300px;
+    border-radius: 15px;
+  }
+
+  .imgPanel {
+  
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+  }
+
+  #closeNamePanel {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 15px;
+    transition: 1s;
+  }
+
+  #closeNamePanel:hover {
+    transform: scale(1.1);
+    background-color: rgb(248, 106, 106);
+  }
+
+input {
+    width: 90px;
+}
+
+.options {
+  border-bottom: 1px solid grey;
+  border-radius: 50%;
+}
+
+/*end of panels */
+
+
+@media (min-width: 900px) {
+  .profileContainer {
+     height: 91.5%;
+     border-radius: 15px;
+  }
+  
+  .tindogPlus {
+    margin-top: 1rem;
+  }
+
+}
+
+@media(max-height: 820px) {
+
+  .profileContainer {
+    height: 89.5%;
+
+ }
+
+}
+
+@media(min-height: 900px) {
+
+  .profileContainer {
+    height: 90%;
+
+ }
+
+}
+
+@media (min-width: 800px) {
+  
+.plusButton {
+  margin-top: 1rem;
+}
+}
+
+

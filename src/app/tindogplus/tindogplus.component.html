@@ -1,0 +1,98 @@
+
+<app-nav></app-nav>
+<ng-container *ngIf=" isTinDogPlusRoute()">
+<div class="tinDogMainContainer" [ngClass]="{ 'darker': payment }">
+  <div class="tinDogPlus flex justify-center content-center " [ngClass]="{ 'darkerMain': payment }">
+
+    <div class="tinDogPlusContainer flex flex-col  flex-wrap content-center text-center" >
+        <h1 class="text-3xl p-5">Get Tindog Plus</h1>
+        <img src="assets/paw-print.svg" class="self-center"/>
+        <h1 class="text-2xl pt-5">Control Your Age & Distance</h1>
+        <p class="text-base font-extralight italic">Limit what others see about you</p>
+
+        <ng-container *ngIf="selected === 1">
+            <div class="mostPopular self-center">
+            <h1 class="p-1 text-sm ">MOST POPULAR</h1>
+        </div>
+          </ng-container>
+    </div>
+
+</div>
+
+    <div class="tinDogPlusOptions flex flex-row justify-between" [ngClass]="{ 'darker': payment }">
+    
+        <div *ngFor="let item of options; index as i" (click)="getIndexOfSelected(i)">
+            
+            <div class="option1  text-center p-3" [ngClass]="{ 'selected': selected === i }">
+                <h1 class="text-3xl">{{item.duration}}</h1>
+                <p class="text-slate-500 text-lg">months</p>
+                <h2 class="text-lg font-bold">${{item.price}}/mo</h2>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="finalize flex flex-col flex-wrap justify-center content-center">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-20 w-2/4" (click)="handlePayment()">CONTINUE</button>
+        <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mt-10 w-2/5 self-center" *ngIf="!payment" (click)="backToHomePage()">No Thanks</button>
+
+
+    </div>
+
+
+    <ng-container *ngIf="payment">
+        <div class="paymentContainer">
+            <div class="flex flex-col flex-wrap justify-center content-center text-center">
+                <img src="assets/dogpayment.svg" class="self-center mt-1"/>
+                <h1 class="text-2xl font-bold">Payment Info</h1>
+            </div>
+
+            <form [formGroup]="paymentForm" class="flex flex-col flex-wrap justify-center content-center" (ngSubmit)="onSubmit()">
+                <div class="fullname flex flex-col pl-1">
+                    <label for="fullname" class=" text-xl">Full Name</label>
+                    <input type="text" id="fullname" placeholder="John Smith" class="" formControlName="fullname">
+                </div>
+
+                <div class="creditcard flex flex-col pl-1">
+                    <label for="creditcard" class=" text-xl">Credit Card Number</label>
+                    <input id="creditcard" type="number" id="creditcard" placeholder="1234 1234 1234 1234" class="" formControlName="creditcard">
+                </div>
+
+                <div class="expdatecvv flex flex-row pl-1">
+
+                    <div class=" flex flex-col pl-1">
+                    <label for="expdate" class=" text-xl">Exp Date</label>
+                    <input type="date" id="expdate" placeholder="MM/YY" class="w-11/12" formControlName="expdate">
+                    </div>
+        
+                    <div class=" flex flex-col pl-1">
+                    <label for="cvv" class=" text-xl">CVV</label>
+                    <input type="number" id="cvv" placeholder="***" class="w-6/12" formControlName="cvv">
+                    </div>
+                </div>
+
+                <div class="creditcard flex flex-col pl-1">
+                <label for="zipcode" class=" text-xl">Zip Code</label>
+                <input type="number" id="zipcode" placeholder="90210" class="" formControlName="zipcode">
+                </div>
+
+                <div class="acceptButton flex flex-col flex-wrap justify-center content-center mt-5">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/4">Confirm Payment</button>
+                    <button type="button" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5" (click)="handlePayment()">Cancel</button>
+                </div>
+
+            </form>
+
+
+
+
+
+
+        </div>
+    </ng-container>
+   
+
+
+</div>
+</ng-container>

@@ -1,0 +1,47 @@
+
+<ng-container *ngIf="window.innerWidth < 1200">
+    <app-nav></app-nav>
+    <ng-container *ngIf=" isMessagesRoute()">
+        <div class="messagesCont">
+            <h2 class="font-bold pl-5 pt-5">Messages</h2>
+
+    
+           <div *ngFor="let item of names; let i = index">
+            <div class="messageHead flex flex-row align-center p-5" (click)="goToMessages(item.name)">
+                <img [src]="'assets/' + (names.indexOf(item) + 1) + '.png'" class="mr-5 ml-5"/>
+                <div class="messageInfo flex flex-col justify-center">
+                    <h1 class="font-bold">{{item.name}}</h1>
+                    <p>Matched on {{item.matched}}</p>
+                </div>
+            </div>
+           </div>
+
+        </div>
+
+
+
+</ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="window.innerWidth > 1200">
+    <ng-container *ngIf=" isMessagesRoute()">
+        <div class="messagesCont">
+            <h2 class="font-bold pl-5 pt-5">Messages</h2>
+
+    
+           <div *ngFor="let item of names; let i = index">
+            <div class="messageHead flex flex-row align-center p-5" (click)="goToMessages(item.name)">
+                <img [src]="'assets/' + (names.indexOf(item) + 1) + '.png'" class="mr-5 ml-5"/>
+                <div class="messageInfo flex flex-col justify-center">
+                    <h1 class="font-bold">{{item.name}}</h1>
+                    <p>Matched on {{item.matched}}</p>
+                </div>
+            </div>
+           </div>
+
+        </div>
+
+
+
+</ng-container>
+  </ng-container>

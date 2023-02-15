@@ -1,0 +1,88 @@
+.messageContainer {
+    background-color: #efeef4;
+    height: 100%;
+}
+.header {
+   background-color: #f14d71;
+   color: white;
+   height: 7%;
+}
+
+.dogInfo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.header button {
+    background-image: url('/assets/arrowback.svg');
+    background-repeat: no-repeat;
+    transform: rotate(90deg);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 2%;
+    top: 1.5%;
+ 
+}
+
+.message {
+    position: absolute;
+    
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+
+  input {
+    border: 1px solid #f14d71;
+    background-color: #f14d71;
+    color: white;
+    width: 90%;
+    border-radius: 15px;
+  }
+
+  input::placeholder {
+    color: white;
+ 
+  }
+
+  .sentMessages {
+    border: 1px solid #f14d71;
+    background-color: #f14d71;
+    border-radius: 15px;
+    max-width: 80%;
+
+    overflow-y: auto;
+    height: 80%;
+
+  }
+
+  .sentMessages h1 {
+    word-wrap: break-word;
+    color: white;
+  }
+  
+
+  .content {
+    overflow-y: auto;
+    height: 87%;
+  }
+  
+
+
+  @media (min-width: 900px) {
+    .header, .messageContainer {
+        border-radius: 15px;
+    }
+    
+
+  }
+
+  
+  
+  
+  

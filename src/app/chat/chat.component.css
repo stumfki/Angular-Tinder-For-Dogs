@@ -4,7 +4,6 @@ h2 {
 .messagesCont {
     background-color: #efeef4;
     height: 100%;
-    width: 30%;
    
 }
 
@@ -26,12 +25,11 @@ h2 {
     color: #8b8a90;
 }
 
-.desktop {
-    position: absolute;
-    right: 20%;
-    top: 5%;
-    height: 90%;
-    width: 30%;
-    border: 1px solid black;
-    border-radius: 15px;
-}
+@media (min-width: 900px) {
+    .messagesCont {
+  
+   
+        border-radius: 15px;
+       
+    }
+  }

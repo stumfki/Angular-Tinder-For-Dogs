@@ -1,0 +1,28 @@
+<app-nav></app-nav>
+
+<ng-container *ngIf="isHeroRoute() && currentDog">
+<div class="dogs flex justify-center align-center relative">
+    <ng-container *ngIf="liked">
+        <img id="badgeLike" src="assets/badge-like.png"/>
+    </ng-container>
+    
+    <ng-container *ngIf="disliked">
+        <img id="badgeDislike"src="assets/badge-nope.png"/>
+    </ng-container>
+    <div class="imgContainer">
+    <img [src]="currentDog" class="p-3"/>
+    </div>
+    <div class="info text-white absolute left-6 bottom-8">
+        <h1 class="text-2xl">{{currentDogName}}, {{currentDogAge}}</h1>
+        <p class="ml-1 text-slate-200">{{currentDogQuote}}</p>
+    </div>
+
+
+  </div>
+
+  <div class="swipe flex flex-row justify-center mt-10">
+    <button id="like" class="mr-10" (click)="like()" [disabled]="swiped"></button>
+    <button id="dislike" class="ml-10" (click)="dislike()" [disabled]="swiped"></button>
+</div>
+</ng-container>
+  

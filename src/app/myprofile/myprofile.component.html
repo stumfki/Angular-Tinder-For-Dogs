@@ -1,0 +1,68 @@
+<app-nav></app-nav>
+<ng-container *ngIf=" isMyProfileRoute()">
+        <div class="profileContainer h-full" [ngClass]="{ 'darker': editInfo || editPicture }">
+         
+    <ng-container *ngIf="editInfo">
+
+        <div class="namePanel mt-10 flex flex-col justify-center items-center">
+    <button id="closeNamePanel" (click)="changeName()">X</button>
+            <div class="nameContainer flex flex-col justify-center align-center items-center">
+        
+                <div class="name p-3">
+                <label for="name" class="p-3">Name:</label>
+                <input type="text" placeholder="{{ name }}" pattern="[A-Za-z]*" [(ngModel)]="inputName">
+            </div>
+
+            <div class="age pb-3">
+                
+                <label for="age" class="p-3">Age:</label>
+                <input type="text" placeholder="13" [(ngModel)]="inputAge">
+            </div>
+      
+            </div>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/4" (click)="confirmNameChange()">Edit Data</button>
+        </div>
+
+        </ng-container>
+
+        <ng-container *ngIf="editPicture">
+
+            <div class="imgPanel mt-10 flex flex-col justify-center items-center">
+        <button id="closeNamePanel" class="imgPanelBtn" (click)="changePicture()">X</button>
+                <img id="imgPanelimg" src="assets/2.png" alt="your-profile-picture" class="w-2/4"/>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/4 mt-3">Change Photo</button>
+            </div>
+    
+            </ng-container>
+  
+    <div class="myProfile flex justify-center align-center relative">
+        <img src="assets/4.png" alt="your-profile-picture" class="mt-5"/>
+    </div>
+
+    <div class="myProfile flex justify-center align-center relative ">
+        <h1 class="text-2xl font-bold">{{name}}, {{age}}</h1>
+    </div>
+
+ <div class="options flex flex-row justify-between mt-10 h-60">
+    <button id="settings" class="ml-10" (click)="goToSettings()"></button>
+    <button id="photoAdd" class="mt-10" (click)="changePicture()"></button>
+    <button id="editData" class="mr-10" (click)="changeName()"></button>
+</div>
+
+<div class="tindogPlus flex flex-col justify-center mt-24">
+
+    <div class="plusInfo flex flex-row justify-center">
+        <img src="assets/Blue_star.svg" class="w-8"/>
+        <h2 class="font-bold text-xl ml-2 mt-1">Stand out with Tindog Plus</h2>
+    </div>
+     
+    <div class="flex justify-center">
+        <p class="text-xs font-extralight mt-2">You're 3 times more likely to get a match!</p>
+    </div>
+    <div class="plusButton flex justify-center mt-16 mb-5">
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/4" (click)="goToTinDogPlus()">GET TINDOG PLUS</button>
+    </div>
+</div>
+
+</div>
+</ng-container>

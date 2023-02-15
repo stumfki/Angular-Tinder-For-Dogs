@@ -1,0 +1,67 @@
+
+
+
+    <ng-container *ngIf="window.innerWidth < 1200">
+      <ng-container *ngIf="isMessagesRoute()">
+         <div class="messageContainer">
+         <div class="header flex flex-row flex-wrap content-center justify-center">
+            <button class="mt-2" (click)="backToMessages()"></button>
+            <div class="dogInfo flex flex-row flex-wrap justify-center content-center items-center">
+               <img [src]="'assets/' + (dog) + '.png'" class="mr-2"/>
+           <h1>{{dog}}</h1>
+         </div>
+         </div>
+      
+         <div class="content" #content>
+         <div *ngFor="let item of messages; let i = index" class="content-end flex justify-end content-end">
+            <div class="sentMessages p-2 mt-3 mr-3">
+              <h1>{{item.text}}</h1>
+            </div>
+          </div>
+         </div>
+          
+          
+         
+      
+      
+         <div class="message">
+            <input type="text" placeholder="Message..." class="p-2" [(ngModel)]="message" (keyup)="addMessage($event)">
+          </div>
+          
+      
+      </div>
+          </ng-container>
+    </ng-container>
+
+
+    <ng-container *ngIf="window.innerWidth > 1200">
+      <ng-container *ngIf="isMessagesRoute()">
+         <div class="messageContainer">
+         <div class="header flex flex-row flex-wrap content-center justify-center">
+            <button class="mt-2" (click)="backToMain()"></button>
+            <div class="dogInfo flex flex-row flex-wrap justify-center content-center items-center">
+               <img [src]="'assets/' + (dog) + '.png'" class="mr-2"/>
+           <h1>{{dog}}</h1>
+         </div>
+         </div>
+      
+         <div class="content" #content>
+            <div *ngFor="let item of filteredMessages; let i = index" class="content-end flex justify-end content-end">
+              <div class="sentMessages p-2 mt-3 mr-3">
+                <h1>{{item.text}}</h1>
+              </div>
+            </div>
+          </div>
+          
+         
+      
+      
+         <div class="message">
+            <input type="text" placeholder="Message..." class="p-2" [(ngModel)]="message" (keyup)="addMessage($event)">
+          </div>
+          
+      
+      </div>
+          </ng-container>
+
+    </ng-container>
